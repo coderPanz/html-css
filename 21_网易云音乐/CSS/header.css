@@ -1,0 +1,77 @@
+/* header一的封装 */
+.header_type_01 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+.header_type_01 .title {
+  font-size: 12px;
+  color: #333;
+}
+.header_type_01 .more {
+  font-size: 12px;
+}
+
+/* header二的封装 */
+.header_type_02 {
+  position: relative;
+  display: flex;
+  /* 两侧排布 */
+  justify-content: space-between;
+  /* 设置文字底部对齐 */
+  align-items: flex-end;
+  width: 689px;
+  height:35px;
+  padding-left: 34px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  box-sizing: border-box;
+  border-bottom: 2px solid rgb(193, 13, 12);
+  background: url(../img/main_index.png) -225px -156px no-repeat;
+  
+}
+.header_type_02::after {
+  position: absolute;
+  right: 10px;
+  bottom: 7px;
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: url(../img/main_index.png) 0 -240px no-repeat;
+}
+.header_type_02 .left-area .title {
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 28px;
+  font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif;
+  color: #333;
+}
+.header_type_02 .right-area .more {
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #666;
+}
+.header_type_02 .right-area .more:hover {
+  text-decoration: underline;
+}
+.header_type_02 .left-area {
+  display: flex;
+  align-items: center;
+}
+.header_type_02 .left-area .list-keyword {
+  display: flex;
+  margin-left: 20px;
+  font-size: 12px;
+}
+.header_type_02 .left-area .list-keyword .item {
+  color: #666;
+}
+.header_type_02 .left-area .list-keyword .item:hover {
+  text-decoration: underline;
+}
+.header_type_02 .left-area .list-keyword .line {
+  margin: 0 10px;
+  color: #ccc;
+}

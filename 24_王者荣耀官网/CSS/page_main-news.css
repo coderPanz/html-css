@@ -1,0 +1,166 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  height: 342px;
+  background: url(../img/main_top.png) no-repeat left top;
+}
+.main .banner-section {
+  width: 604px;
+}
+.main .news-section {
+  flex: 1;
+}
+.main .download-section {
+  width: 236px;
+}
+
+/* 左侧 */
+.main .banner-section .banner-img {
+  display: flex;
+  overflow: hidden;
+  width: 604px;
+  height: 298px;
+}
+.main .banner-section .banner-img .album {
+  display: block;
+}
+.main .banner-section .banner-down {
+  display: flex;
+}
+.main .banner-section .banner-down .item {
+  width: 120.8px;
+  height: 44px;
+  /* 两个属性都可以继承,故写在其父类上面 */
+  line-height: 44px;
+  text-align: center;
+}
+.main .banner-section .banner-down .item .nav {
+  display: block;
+  height: 100%;
+  color: #b1b2be;
+}
+.main .banner-section .banner-down .item .nav:hover {
+  background: rgba(255,255,255,0.15);
+  color: #f3c258;
+}
+
+/* 中间 */
+.main .news-section {
+  padding: 0 17px;
+}
+.main .news-section .news-top {
+  display: flex;
+  /* 设置flex布局后aligin默认值normal为 stretch会把子代元素进行拉伸和父元素高度一样*/
+  /* align-items: stretch; */
+  height: 48px;
+  border-bottom: 1px solid ;
+}
+.main .news-section .news-nav {
+  display: flex;
+}
+.main .news-section .news-nav .item {
+  width: 52px;
+  line-height: 45px;
+  box-sizing: border-box;
+  text-align: center;
+  padding-bottom: 3px;
+
+  transition: border-bottom 80ms ease-in;
+}
+.main .news-section .news-nav .item:hover a,
+.main .news-section .news-nav .item.active a {
+  padding: 0;
+  color: #f3c258;
+  border-bottom: 3px solid #f3c258;
+}
+.main .news-section .news-nav .item a {
+  display: block;
+  height: 100%;
+  color: #b8b9c5;
+}
+.main .news-section .news-more {
+  display: inline-block;
+  width: 52px;
+  height: 21px;
+  text-align: center;
+  margin-top: 12px;
+  color: #b1b2be;
+}
+.main .news-section .news-list .event-top {
+  width: 294px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 15px;
+  margin: 18px 0 11px;
+  background-color: #414046;
+}
+.main .news-section .news-list .event-top a {
+  display: inline-block;
+  width: 230px;
+  height: 100%;
+  color: #f3c258;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.main .news-section .news-list .event {
+  display: flex;
+  justify-content: space-between;
+  height: 21px;
+  margin-bottom: 11px;
+}
+.main .news-section .news-list .event .link {
+  display: flex;
+}
+.main .news-section .news-list .event span {
+  display: inline-block;
+  color: #b8b9c5;
+  width: 32px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  font-size: 12px;
+  border: 1px solid;
+  border-radius: 2px;
+  margin: 2px 5px 0 0;
+}
+.main .news-section .news-list .event span.notice {
+  color: #f4be19;
+}
+/* 需要选择多个类选择器的时候需要把每一个类选择的路径写得相对具体一些 */
+.main .news-section .news-list .event span.hot,
+.main .news-section .news-list .event span.active {
+  color: #ff3636;
+}
+.main .news-section .news-list .event p {
+  width: 230px;
+  line-height: 21px;
+  color: #b8b9c5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.main .news-section .news-list .event i {
+  line-height: 21px;
+  color: #999;
+  font-size: 12px;
+}
+/* 右侧 */
+.main .download-section .download {
+  display: block;
+  width: 236px;
+  height: 128px;
+  background: url(../img/index_sprite.png) no-repeat 0 -219px;
+}
+.main .download-section .battle {
+  display: block;
+  width: 236px;
+  height: 106px;
+  background: url(../img/index_sprite.png) no-repeat 0 -350px;
+}
+.main .download-section .demo {
+  display: block;
+  width: 236px;
+  height: 108px;
+  background: url(../img/index_sprite.png) no-repeat 0 -461px;
+}

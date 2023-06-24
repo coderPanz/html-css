@@ -1,0 +1,377 @@
+
+.main .content {
+  display: flex;
+  justify-content: space-between;
+}
+.main .content .content-left {
+  width: 872px;
+  height: 554px;
+  margin-right: 33px;
+}
+
+/* 内容中心 */
+.main .content .content-left .item_common .item-content {
+  background: url(../img/index_sprite.png) no-repeat 0 -106px;
+}
+
+/* 导航条 */
+.main .content .content-left .item_nav {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  text-align: center;
+  padding: 8px 0 9px;
+}
+.main .content .content-left .item_nav .nav-list a {
+  display: inline-block;
+  color: #333;
+  height: 24px;
+  line-height: 24px;
+  padding: 2px 5px;
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  margin-left: 12px;
+  border-radius: 4px;
+}
+.main .content .content-left .item_nav .nav-list a:hover,
+.main .content .content-left .item_nav .nav-list a.active {
+  border-color: #f3c258;
+  background: #f3c258;
+  color: #fff;
+}
+
+/* video-list */
+.main .content .content-left .item_video {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 410px;
+}
+.main .content .content-left .item_video .video-list {
+  width: 209px;
+  height: 175px;
+  margin-bottom: 30px;
+}
+.main .content .content-left .item_video .video-list .list-link {
+  position: relative;
+  display: block;
+  width: 209px;
+  height: 125px;
+}
+.main .content .content-left .item_video .video-list .list-link .cover {
+  /* display和opacity在执行动画的时候会冲突 */
+  /* display: none; */
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+
+  transition: opacity 300ms ease-in;
+}
+.main .content .content-left .item_video .video-list .list-link:hover .cover {
+  /* display: block; */
+  opacity: 1;
+}
+.main .content .content-left .item_video .video-list .list-link .cover .icon-hov {
+  /* 对于icon小图标的位置调整:用定位来做 */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: url(../img/index_sprite.png) no-repeat -192px -64px;
+}
+.main .content .content-left .item_video .video-list .list-link img {
+  display: inline-block;
+  width: 209px;
+  height: 125px;
+}
+.main .content .content-left .item_video .video-list .list-link .up {
+  position: absolute;
+  display:flex;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 22px;
+  line-height: 22px;
+  padding: 0 10px;
+  font-size: 12px;
+  color: #fff;
+  background: rgba(0,0,0,0.6); 
+}
+.main .content .content-left .item_video .video-list .list-link .up .icon {
+  display: inline-block;
+  width: 14px;
+  height: 20px;
+  margin-right: 4px;
+  background: url(../img/index_sprite.png) no-repeat -255px -59px;
+}
+.main .content .content-left .item_video .video-list .list-bottom {
+  display: block;
+  height: 40px;
+  margin-top: 10px;
+  color: #333;
+}
+
+/* 赛事中心 */
+.main .content .content-left .item_common .item-match {
+  background: url(../img/index_sprite.png) no-repeat 0 -184px;
+}
+
+/* 赛事速览 */
+.main .content .content-left .item_scan {
+  display: flex;
+  height: 260px;
+  margin: 32px 0 15px;
+}
+.main .content .content-left .item_scan .scan-album {
+  display: block;
+  width: 211px;
+  height: 100%;
+  margin-right: 10px;
+}
+.main .content .content-left .item_scan .scan-content {
+  width: 577px;
+  height: 66px;
+}
+.main .content .content-left .item_scan .scan-content .content-header {
+  display: block;
+  font-size: 24px;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.main .content .content-left .item_scan .scan-content .content-header:hover {
+  text-decoration: underline;
+}
+.main .content .content-left .item_scan .scan-content .content-subhead {
+  display: block;
+  width: 450px;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.main .content .content-left .item_scan .scan-content .content-list {
+  width: 630px;
+}
+.main .content .content-left .item_scan .scan-content .content-list .list-item {
+  /* 当两个多个子元素设置line-block属性后会在水平方向上出现垂直不对齐现象,这是要在其父元素上设置flex布局 */
+  position: relative;
+  display: flex;
+  height: 23px;
+  margin: 10px 0 9px;
+}
+.main .content .content-left .item_scan .scan-content .content-list .list-item span {
+  display: inline-block;
+  width: 48px;
+  height: 19px;
+  line-height: 19px;
+  text-align: center;
+  margin-right: 12px;
+  background: #e3e3e3;
+  border-radius: 10px;
+  border: 2px solid #e3e3e3;
+  color: #999999;
+  text-indent: 2px;
+  overflow: hidden; 
+}
+.main .content .content-left .item_scan .scan-content .content-list .list-item a {
+  display: inline-block;
+  width: 450px;
+  color: #333;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.main .content .content-left .item_scan .scan-content .content-list .list-item a:hover {
+  text-decoration: underline;
+}
+.main .content .content-left .item_scan .scan-content .content-list .list-item i {
+  position: absolute;
+  right: 0px;
+  font-size: 12px;
+  color: #b8b9c5;;
+}
+
+/* 右侧 */
+.main .content .content-right {
+  width: 295px;
+}
+.main .content .content-right .item-role {
+  background: url(../img/index_sprite.png) no-repeat 0 -144px;
+}
+.main .content .content-right .item_new-hero {
+  margin-top: 32px;
+  margin-bottom: 41px;
+}
+.main .content .content-right .item_new-hero .hero-album {
+  display: block;
+  width: 295px;
+  height: 156px;
+}
+.main .content .content-right .item_new-hero .hero-info {
+  width: 262px;
+  height: 47px;
+  padding: 10px 15px;
+  border: 1px solid #e5e5e5;;
+  border-top: none;
+  margin-bottom: 10px;
+}
+.main .content .content-right .item_new-hero .hero-info .hero-name {
+  font-size: 18px;
+  color: #333;
+  font-weight: 700;
+}
+.main .content .content-right .item_new-hero .hero-info .online-time {
+  font-size: 12px;
+  color: #999;
+}
+.main .content .content-right .item_new-hero .hero-list {
+  display: flex;
+  justify-content: space-between;
+}
+.main .content .content-right .item_new-hero .hero-list .item-list a {
+  position: relative;
+  display: block;
+  width: 68px;
+  height: 173px;
+}
+.main .content .content-right .item_new-hero .hero-list .item-list a:hover 
+.cover {
+  /* display: block; */
+  opacity: 1;
+}
+.main .content .content-right .item_new-hero .hero-list .item-list .list-link .cover {
+  position: absolute;
+  /* display: none; */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.88);
+
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+.main .content .content-right .item_new-hero .hero-list .item-list .list-link .cover span {
+  position: absolute;
+  display: inline-block;
+  width: 13px;
+  height: 40px;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: #f3c258;
+}
+
+/* 赛程 */
+.main .content .content-right .item_common .item-game {
+  background: url(../img/index_sprite.png) no-repeat -157px -106px;
+}
+.main .content .content-right .item_common .buy {
+  position: relative;
+  top: 2px;
+  right: -32px;
+  display: inline-block;
+  width: 46px;
+  height: 20px;
+  line-height: 19px;
+  text-indent: 8px;
+  padding-left: 22px;
+  border: 1px solid #f3c258;
+  border-radius: 2px;
+  background: url(../img/index_sprite.png) no-repeat -243px -85px;
+}
+
+/* 赛程信息 */
+.main .content .content-right .item_subnav {
+  display: flex;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+.main .content .content-right .item_subnav .nav-time {
+  display: inline-block;
+  width: 83px;
+  color: #999;
+}
+.main .content .content-right .item_subnav .nav-name01 {
+  display: inline-block;
+  width: 83px;
+  color: #999;
+}
+.main .content .content-right .item_subnav .nav-space {
+  display: inline-block;
+  width: 43px;
+}
+.main .content .content-right .item_subnav .nav-name02 {
+  display: inline-block;
+  width: 83px;
+  color: #999;
+}
+
+.main .content .content-right .item_battle {
+  margin-bottom: 21px;
+}
+.main .content .content-right .item_battle .battle-list {
+  display: flex;
+  height: 67px;
+  text-align: center;
+  border-bottom: 1px;
+}
+.main .content .content-right .item_battle .battle-list .nav-time {
+  display: inline-block;
+  width: 83px;
+  line-height: 67px;
+}
+.main .content .content-right .item_battle .battle-list .nav-name01 {
+  display: inline-block;
+  width: 83px;
+}
+.main .content .content-right .item_battle .battle-list .nav-name01 img {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 0 27px;
+}
+.main .content .content-right .item_battle .battle-list .nav-name01 i {
+  font-size: 12px;
+  color: #333;
+}
+.main .content .content-right .item_battle .battle-list .nav-space {
+  display: inline-block;
+  width: 43px;
+  font-size: 14px;
+  color: #f3c258;
+  line-height: 67px;
+}
+.main .content .content-right .item_battle .battle-list .nav-name02 {
+  display: inline-block;
+  width: 83px;
+}
+.main .content .content-right .item_battle .battle-list .nav-name02 img {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 0 27px;
+}
+
+/* 封面 */
+.main .content .content-right .item_album .album-link img {
+  display: block;
+  width: 293px;
+  height: 159px;
+}

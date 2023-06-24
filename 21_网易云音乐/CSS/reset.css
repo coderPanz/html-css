@@ -1,0 +1,26 @@
+body, h1, h2, h3, ul, ol, li, p, dl, dd, dt {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #000;
+  outline: none;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+/* 解决图片的基线对齐的问题 */
+img {
+  vertical-align: top;
+}
+
+i {
+  font-style: normal;
+}

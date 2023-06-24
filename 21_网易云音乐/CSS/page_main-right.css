@@ -1,0 +1,152 @@
+  /* 右侧 */
+  .main .area-right {
+    width: 250px;
+    height: 1340px;
+  }
+  .main .area-right .user-login {
+    width: 250px;
+    height: 126px;
+    background: url(../img/main_index.png) 0 0;
+  }
+  .main .area-right .user-login .desc {
+    font-size: 12px;
+    width: 205px;
+    margin: 0 auto;
+    padding: 16px 0;
+    line-height: 22px;
+  }
+  .main .area-right .user-login .btn {
+    display: block;
+    width: 100px;
+    height: 31px;
+    line-height: 31px;
+    /* background-color: #f00; */
+    color: #fff;
+    /* 块内的文字对齐 */
+    text-align: center;
+    /* 块级元素相对于父元素的居中对齐 */
+    margin: 0 auto; 
+    text-shadow: 0 1px 0 #8a060b;
+    background: url(../img/main_index.png) 0 -195px;
+  }
+  .main .area-right .user-login .btn:hover {
+    background-position: -110px -195px;
+  }
+
+  .settle-singer {
+    margin-top: 15px;
+  }
+  .settle-singer .header_type_01 {
+    margin: 0 20px;
+  } 
+  .settle-singer .header_type_01 .more:hover {
+    text-decoration: underline;
+  }
+  .hot-anchor .header_type_01 {
+    /* padding: 20px; */
+    margin: 15px 20px 0 ;
+  }
+
+  /* 右侧歌单列表 */
+  .area-right .list .item {
+    display: flex;
+    /* 这种方法会使得info包裹singer和desc在tiem的y轴上居中 */
+    /* align-items: center; */
+    width: 210px;
+    height: 62px;
+    margin: 15px 20px 0;
+    background-color: #fafafa;
+  }   
+  .area-right .list .item .info {
+    flex: 1;
+    /* 让singer和desc一起在info居中 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* height: 60px; */
+    width: 133px;
+    height: 60px;
+    padding-left: 14px;
+    border: 1px solid #e9e9e9;
+    border-left: none;
+  }
+  .area-right .list .item .info .singer{
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+  }
+  .area-right .list .item .info .desc {
+    font-size: 12px;
+    color: #666;
+    width: 80%;
+
+    /* 在设置 justify-content: space-around;属性后margin-top就不需要了*/
+    /* margin-top: 8px; */
+
+    /* 单行显示,若超出区域则省略号显示:前提是需要设置父元素的宽高 */  
+    white-space: nowrap;
+    /*文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。*/
+    text-overflow: ellipsis;
+    /*单行文本溢出显示省略号*/
+    overflow: hidden;
+    /*当父元素设置了height值时，则设置overflow:hidden后，子元素超出父元素部分隐藏*/
+  }
+  .area-right .list .item:hover {
+    background-color: #f4f4f4;
+  } 
+
+   /* 右侧按钮 */
+   .area-right .btn .apply {
+    font-size: 12px;
+    color: #333;
+    font-weight: 700;
+    width: 210px;
+    height: 31px;
+    margin-top: 14px;
+    margin-left: 20px;
+    /* 为了隐藏左上角的红点,还需要再父元素上面设置圆角属性 */
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .btn_type_01_sup:hover {
+    color: #333;
+    background-position: right -182px;
+  }
+  .btn_type_01_sub:hover {
+    color: #333;
+    background-position:  0 -141px;
+  }
+
+  /* 热门主播 */
+  .area-right .hot-anchor .hot-list {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  .area-right .hot-anchor .hot-list .hot-item {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  .area-right .hot-anchor .hot-list .hot-item .album {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  .area-right .hot-anchor .hot-list .hot-item .info {
+    font-size: 12px;
+    width: 160px;
+    height: 43px;
+    /* 继承给它的子代 */
+    line-height: 21px;
+  }
+  .area-right .hot-anchor .hot-list .hot-item .info .singer {
+    color: #000;
+  }
+  .area-right .hot-anchor .hot-list .hot-item .info .singer:hover {
+    text-decoration: underline;
+  }
+  .area-right .hot-anchor .hot-list .hot-item .info .desc {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #666;
+  }

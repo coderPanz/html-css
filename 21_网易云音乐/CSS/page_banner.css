@@ -1,0 +1,113 @@
+/* 轮播图部分 */
+.banner {
+  height: 285px;
+  background-image: url(../img/banner.jpg);
+  background-position: center center;
+  background-size: 6000px;
+}
+.banner .area {
+  /* 要在area-right设置绝对定位 */
+  position: relative;
+  height: 285px;
+  margin: 0 auto; 
+  background-color: #f88;
+}
+.banner .area .area-left {
+  position: relative;
+  width: 730px;
+}
+/* 图片列表 */
+.banner .area-left .img-list {
+  width: 730px;
+}
+.area .area-left .img-list .item {
+  display: block;
+}
+.area .area-left .img-list .item img {
+  /* 使得img撑满item  */
+  width: 100%;
+  height: 285px;
+}
+
+/* 点列表 */
+.banner .area-left .dots-list {
+  position: absolute;
+  left: 0; 
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  bottom: 5px;
+}
+.banner .area-left .dots-list li {
+  margin: 5px;
+}
+.banner .area-left .dots-list .item {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(../img/ibanner_sprite.png) 3px -343px;
+}
+.banner .area-left .dots-list .item.active,
+.banner .area-left .dots-list .item:hover {
+  background-position: -16px -343px;
+}
+
+/* 左边区域 */
+.banner .area .area-right {
+  position: absolute;
+  width: 254px;
+  right: -1px;
+  /* 不设置高度的话就设置bottem=0px,top=0px:就相当于设置了高度 */
+  top: 0;
+  bottom: 0;
+  background: url(../img/download_sprite.png);
+}
+.banner .area .area-right .download {
+  display: block;
+  width: 215px;
+  height: 56px;
+  margin: 186px 0 0 19px;
+  /* 隐藏文字 */
+  text-indent: -9999px;
+}
+.banner .area .area-right .download:hover {
+  background: url(../img/download_sprite.png);
+  background-position: 0 -290px;
+}
+.banner .area .area-right .desc {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: #8d8d8d;
+}
+
+/* 左右控制按钮 */
+.banner .area .contrl {
+  position: absolute;
+  width: 37px;
+  /* 包裹具体存在的元素 */
+  height: 63px;
+  /* top=0,bottom=0:是把contrl高度拉伸,撑满父级元素的高度 */
+  top: 0;
+  bottom: 0;
+  /* 在高度撑满的情况下对包裹的内容进行居中 */
+  margin: auto 0;
+  /* 隐藏文字 */
+  text-indent: -9999px;
+  /* background: url(./img/banner_spirit02.png) 0 -360px; */
+}
+.banner .area .contrl.ctrl-left {
+  background: url(../img/banner_sprite02.png) 0 -360px;
+  left: -68px;
+}
+.banner .area .contrl.ctrl-left:hover {
+  background-position: 0 -430px;
+}
+.banner .area .contrl.ctrl-right {
+  background: url(../img/banner_sprite02.png) 0 -508px;
+  right: -68px;
+}
+.banner .area .contrl.ctrl-right:hover {
+  background-position: 0 -578px;
+}

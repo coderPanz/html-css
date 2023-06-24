@@ -1,0 +1,134 @@
+.header {
+  position: relative;
+  background: rgba(0,0,0,0.8);
+  height: 84px;
+}
+.header .area {
+  display: flex;
+  justify-content: space-between;
+  height: 84px;
+}
+.header .area .left-area {
+  display: flex;
+}
+.header .area .left-area .logo a {
+  /* 设置相对定位后,a设置高度后会给父元素汇报高度故logo也会有同样的高度故可以用居中方式二(父元素存在高度的基础条件) */
+  position: relative;
+  display: block;
+  width: 210px;
+  height: 54px;
+  
+  /* 居中方式二 */
+  top: 50%;
+  transform: translatey(-50%);
+
+  text-indent: -9999px;
+  background: url(../img/logo-main.png) no-repeat center center;
+}
+
+.header .area .left-area .nav-list {
+  display: flex;
+}
+.header .area .left-area .nav-list .item {
+  width: 115px;
+  height: 84px;
+  text-align: center;
+}
+.header .area .left-area .nav-list .item:hover {
+  background: url(../img/index_sprite.png) no-repeat;
+}
+.header .area .left-area .nav-list .item a {
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+  color: #c9c9dd;
+  font-size: 14px;
+  padding-top: 23px;
+}
+.header .area .left-area .nav-list .item:hover a {
+  color: #e4b653;
+}
+.header .area .left-area .nav-list .item a .desc {
+  display: block;
+  color: #858792;
+  font-size: 12px;
+  margin-top: 8px;
+}
+.header .area .left-area .nav-list .item:hover a .desc {
+  color: #91763f;
+}
+
+.header .area .right-area {
+  display: flex;
+  align-items: center;
+}
+.header .area .right-area .login-png {
+  display: block;
+  width: 42px;
+  height: 42px;
+  margin-right: 10px;
+  border: 1px solid #91763f;
+  border-radius: 42px;
+}
+.header .area .right-area .info .login {
+  font-size: 16px;
+  color: #fff;
+}
+.header .area .right-area .info p {
+  font-size: 14px;
+  color: #858792;
+  margin-top: 4px;
+}
+
+.header .underline {
+  position: absolute;
+  left: 0; 
+  right: 0;
+  top: 84px;
+  background: rgba(0,0,0,0.7);
+  height: 0;
+  transition: height 300ms ease;
+}
+.header:hover .underline {
+  height: 285px;
+}
+.header .underline .inner {
+  display: flex;
+  margin: 10px 353px;
+  width: 940px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: -1px 0 30px 56px;
+  overflow: hidden;
+}
+.header .underline .inner .item-nav {
+  width: 112px;
+  padding: 2px 2.5px 0;
+  text-align: center;
+}
+.header .underline .inner .item-nav a {
+  display: block;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  line-height: 30px;
+  padding: 0;
+  font-size: 12px;
+  color: #c9c9dd;
+}
+.header .underline .inner .item-nav a:hover {
+  color: #f3c258;
+  text-decoration: underline;
+}
+.header .underline .inner .item-nav a .icon-hot {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url(../img/index_sprite.png) no-repeat -163px -68px;
+}
+.header .underline .inner .item-nav a .icon-fans {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url(../img/index_sprite.png) no-repeat -137px -68px;
+}

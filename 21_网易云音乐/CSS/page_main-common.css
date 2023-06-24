@@ -1,0 +1,8 @@
+/* main公共部分 */
+.main .area {
+  display: flex;  
+  justify-content: space-between;
+  border: 1px solid #d3d3d3;
+  border-width: 0 1px;
+  background: url(../img/main_wrap1.png);
+}   

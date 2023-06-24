@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王者荣耀-content</title>
+  <link rel="stylesheet" href="./CSS/reset.css">
+  <link rel="stylesheet" href="./CSS/common.css">
+  <link rel="stylesheet" href="./CSS/main_header.css">
+  <style>
+    .main .content {
+      display: flex;
+      justify-content: space-between;
+    }
+    .main .content .content-left {
+      width: 872px;
+      height: 554px;
+      margin-right: 33px;
+    }
+
+    /* 内容中心 */
+    .main .content .content-left .item_common .item-content {
+      background: url(./img/index_sprite.png) no-repeat 0 -106px;
+    }
+
+    /* 导航条 */
+    .main .content .content-left .item_nav {
+      display: flex;
+      align-items: center;
+      height: 48px;
+      text-align: center;
+      padding: 8px 0 9px;
+    }
+    .main .content .content-left .item_nav .nav-list a {
+      display: inline-block;
+      color: #333;
+      height: 24px;
+      line-height: 24px;
+      padding: 2px 5px;
+      background-color: #f5f5f5;
+      border: 1px solid #e5e5e5;
+      margin-left: 12px;
+      border-radius: 4px;
+    }
+    .main .content .content-left .item_nav .nav-list a:hover,
+    .main .content .content-left .item_nav .nav-list a.active {
+      border-color: #f3c258;
+      background: #f3c258;
+      color: #fff;
+    }
+
+    /* video-list */
+    .main .content .content-left .item_video {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      height: 410px;
+    }
+    .main .content .content-left .item_video .video-list {
+      width: 209px;
+      height: 175px;
+      margin-bottom: 30px;
+    }
+    .main .content .content-left .item_video .video-list .list-link {
+      position: relative;
+      display: block;
+      width: 209px;
+      height: 125px;
+    }
+    .main .content .content-left .item_video .video-list .list-link .cover {
+      /* display和opacity在执行动画的时候会冲突 */
+      /* display: none; */
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.6);
+
+      transition: opacity 300ms ease-in;
+    }
+    .main .content .content-left .item_video .video-list .list-link:hover .cover {
+      /* display: block; */
+      opacity: 1;
+    }
+    .main .content .content-left .item_video .video-list .list-link .cover .icon-hov {
+      /* 对于icon小图标的位置调整:用定位来做 */
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: url(./img/index_sprite.png) no-repeat -192px -64px;
+    }
+    .main .content .content-left .item_video .video-list .list-link img {
+      display: inline-block;
+      width: 209px;
+      height: 125px;
+    }
+    .main .content .content-left .item_video .video-list .list-link .up {
+      position: absolute;
+      display:flex;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 22px;
+      line-height: 22px;
+      padding: 0 10px;
+      font-size: 12px;
+      color: #fff;
+      background: rgba(0,0,0,0.6); 
+    }
+    .main .content .content-left .item_video .video-list .list-link .up .icon {
+      display: inline-block;
+      width: 14px;
+      height: 20px;
+      margin-right: 4px;
+      background: url(./img/index_sprite.png) no-repeat -255px -59px;
+    }
+    .main .content .content-left .item_video .video-list .list-bottom {
+      display: block;
+      height: 40px;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    /* 赛事中心 */
+    .main .content .content-left .item_common .item-match {
+      background: url(./img/index_sprite.png) no-repeat 0 -184px;
+    }
+
+    /* 赛事速览 */
+    .main .content .content-left .item_scan {
+      display: flex;
+      height: 260px;
+      margin: 32px 0 15px;
+    }
+    .main .content .content-left .item_scan .scan-album {
+      display: block;
+      width: 211px;
+      height: 100%;
+      margin-right: 10px;
+    }
+    .main .content .content-left .item_scan .scan-content {
+      width: 577px;
+      height: 66px;
+    }
+    .main .content .content-left .item_scan .scan-content .content-header {
+      display: block;
+      font-size: 24px;
+      color: #333;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .main .content .content-left .item_scan .scan-content .content-header:hover {
+      text-decoration: underline;
+    }
+    .main .content .content-left .item_scan .scan-content .content-subhead {
+      display: block;
+      width: 450px;
+      color: #666;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .main .content .content-left .item_scan .scan-content .content-list {
+      width: 630px;
+    }
+    .main .content .content-left .item_scan .scan-content .content-list .list-item {
+      /* 当两个多个子元素设置line-block属性后会在水平方向上出现垂直不对齐现象,这是要在其父元素上设置flex布局 */
+      position: relative;
+      display: flex;
+      height: 23px;
+      margin: 10px 0 9px;
+    }
+    .main .content .content-left .item_scan .scan-content .content-list .list-item span {
+      display: inline-block;
+      width: 48px;
+      height: 19px;
+      line-height: 19px;
+      text-align: center;
+      margin-right: 12px;
+      background: #e3e3e3;
+      border-radius: 10px;
+      border: 2px solid #e3e3e3;
+      color: #999999;
+      text-indent: 2px;
+      overflow: hidden; 
+    }
+    .main .content .content-left .item_scan .scan-content .content-list .list-item a {
+      display: inline-block;
+      width: 450px;
+      color: #333;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .main .content .content-left .item_scan .scan-content .content-list .list-item a:hover {
+      text-decoration: underline;
+    }
+    .main .content .content-left .item_scan .scan-content .content-list .list-item i {
+      position: absolute;
+      right: 0px;
+      font-size: 12px;
+      color: #b8b9c5;;
+    }
+
+    /* 右侧 */
+    .main .content .content-right {
+      width: 295px;
+    }
+    .main .content .content-right .item-role {
+      background: url(./img/index_sprite.png) no-repeat 0 -144px;
+    }
+    .main .content .content-right .item_new-hero {
+      margin-top: 32px;
+      margin-bottom: 41px;
+    }
+    .main .content .content-right .item_new-hero .hero-album {
+      display: block;
+      width: 295px;
+      height: 156px;
+    }
+    .main .content .content-right .item_new-hero .hero-info {
+      width: 262px;
+      height: 47px;
+      padding: 10px 15px;
+      border: 1px solid #e5e5e5;;
+      border-top: none;
+      margin-bottom: 10px;
+    }
+    .main .content .content-right .item_new-hero .hero-info .hero-name {
+      font-size: 18px;
+      color: #333;
+      font-weight: 700;
+    }
+    .main .content .content-right .item_new-hero .hero-info .online-time {
+      font-size: 12px;
+      color: #999;
+    }
+    .main .content .content-right .item_new-hero .hero-list {
+      display: flex;
+      justify-content: space-between;
+    }
+    .main .content .content-right .item_new-hero .hero-list .item-list a {
+      position: relative;
+      display: block;
+      width: 68px;
+      height: 173px;
+    }
+    .main .content .content-right .item_new-hero .hero-list .item-list a:hover 
+    .cover {
+      /* display: block; */
+      opacity: 1;
+    }
+    .main .content .content-right .item_new-hero .hero-list .item-list .list-link .cover {
+      position: absolute;
+      /* display: none; */
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.88);
+
+      opacity: 0;
+      transition: opacity 300ms ease-in-out;
+    }
+    .main .content .content-right .item_new-hero .hero-list .item-list .list-link .cover span {
+      position: absolute;
+      display: inline-block;
+      width: 13px;
+      height: 40px;
+      text-align: center;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      color: #f3c258;
+    }
+
+    /* 赛程 */
+    .main .content .content-right .item_common .item-game {
+      background: url(./img/index_sprite.png) no-repeat -157px -106px;
+    }
+    .main .content .content-right .item_common .buy {
+      position: relative;
+      top: 2px;
+      right: -32px;
+      display: inline-block;
+      width: 46px;
+      height: 20px;
+      line-height: 19px;
+      text-indent: 8px;
+      padding-left: 22px;
+      border: 1px solid #f3c258;
+      border-radius: 2px;
+      background: url(./img/index_sprite.png) no-repeat -243px -85px;
+    }
+
+    /* 赛程信息 */
+    .main .content .content-right .item_subnav {
+      display: flex;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+    .main .content .content-right .item_subnav .nav-time {
+      display: inline-block;
+      width: 83px;
+      color: #999;
+    }
+    .main .content .content-right .item_subnav .nav-name01 {
+      display: inline-block;
+      width: 83px;
+      color: #999;
+    }
+    .main .content .content-right .item_subnav .nav-space {
+      display: inline-block;
+      width: 43px;
+    }
+    .main .content .content-right .item_subnav .nav-name02 {
+      display: inline-block;
+      width: 83px;
+      color: #999;
+    }
+
+    .main .content .content-right .item_battle {
+      margin-bottom: 21px;
+    }
+    .main .content .content-right .item_battle .battle-list {
+      display: flex;
+      height: 67px;
+      text-align: center;
+      border-bottom: 1px;
+    }
+    .main .content .content-right .item_battle .battle-list .nav-time {
+      display: inline-block;
+      width: 83px;
+      line-height: 67px;
+    }
+    .main .content .content-right .item_battle .battle-list .nav-name01 {
+      display: inline-block;
+      width: 83px;
+    }
+    .main .content .content-right .item_battle .battle-list .nav-name01 img {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      margin: 0 27px;
+    }
+    .main .content .content-right .item_battle .battle-list .nav-name01 i {
+      font-size: 12px;
+      color: #333;
+    }
+    .main .content .content-right .item_battle .battle-list .nav-space {
+      display: inline-block;
+      width: 43px;
+      font-size: 14px;
+      color: #f3c258;
+      line-height: 67px;
+    }
+    .main .content .content-right .item_battle .battle-list .nav-name02 {
+      display: inline-block;
+      width: 83px;
+    }
+    .main .content .content-right .item_battle .battle-list .nav-name02 img {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      margin: 0 27px;
+    }
+
+    /* 封面 */
+    .main .content .content-right .item_album .album-link img {
+      display: block;
+      width: 293px;
+      height: 159px;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="main main_wrapper">
+      <div class="content">
+        <div class="content-left">
+          <div class="item_common">
+            <h3 class="item-content item_header">内容中心</h3>
+            <a href="#" class="more_header">更多</a>
+          </div>
+          <div class="item_column">
+            <a class="active" href="#">精品栏目</a>
+            <span></span>
+            <a href="#">赛事精品</a>
+            <span></span>
+            <a href="#">英雄攻略</a>
+          </div>
+          <ul class="item_nav">
+            <li class="nav-list">
+              <a class="active" href="#">最新</a>
+            </li>
+            <li class="nav-list">
+              <a href="#">峡谷大气层</a>
+            </li>
+            <li class="nav-list">
+              <a href="#">马菠萝奇闻录</a>
+            </li>
+            <li class="nav-list">
+              <a href="#">狄仁杰封神榜</a>
+            </li>
+            <li class="nav-list">
+              <a href="#">游走基本法</a>
+            </li>
+            <li class="nav-list">
+              <a href="#">野王修炼手册</a>
+            </li>
+            <li class="nav-list">
+              <a href="#">法王的荣耀</a>
+            </li>
+          </ul>
+          <ul class="item_video">
+            <li class="video-list">
+              <a class="list-link" href="#">
+                <div class="cover">
+                  <i class="icon-hov"></i>
+                </div>
+                <img src="./img/video_album01.png" alt="">
+                <span class="up">
+                  <i class="icon"></i>
+                  <span class="num">55.2w</span>
+                </span>
+              </a> 
+              <span class="list-bottom">
+                【超神快讯1+1】第二季第九期 揭秘KPL陷入五的怪圈
+              </span>
+            </li>
+            <li class="video-list">
+              <a class="list-link" href="#">
+                <div class="cover">
+                  <i class="icon-hov"></i>
+                </div>
+                <img src="./img/video_album02.jfif" alt="">
+                <span class="up">
+                  <i class="icon"></i>
+                  <span class="num">55.2w</span>
+                </span>
+              </a>
+              <span class="list-bottom">
+                峡谷大气层|力的作用是相互的之拿捏对手反向大招 
+              </span>
+            </li>
+            <li class="video-list">
+              <a class="list-link" href="#">
+                <div class="cover">
+                  <i class="icon-hov"></i>
+                </div>
+                <img src="./img/video_album03.jfif" alt="">
+                <span class="up">
+                  <i class="icon"></i>
+                  <span class="num">55.2w</span>
+                </span>
+              </a>
+              <span class="list-bottom">
+                【边路通天指南】第5期：解决英雄克制的技巧
+              </span>
+            </li>
+            <li class="video-list">
+              <a class="list-link" href="#">
+                <div class="cover">
+                  <i class="icon-hov"></i>
+                </div>
+                <img src="./img/video_album04.jfif" alt="">
+                <span class="up">
+                  <i class="icon"></i>
+                  <span class="num">55.2w</span>
+                </span>
+              </a>
+              <span class="list-bottom">
+                【边路通天指南】第4期：如何前期在对抗路线上打出压制力？这些小细节一定得注意!
+              </span>
+            </li>
+            <li class="video-list">
+              <a class="list-link" href="#">
+                <div class="cover">
+                  <i class="icon-hov"></i>
+                </div>
+                <img src="./img/video_album05.jfif" alt="">
+                <span class="up">
+                  <i class="icon"></i>
+                  <span class="num">55.2w</span>
+                </span>
+              </a>
+              <span class="list-bottom">
+                【边路通天指南】第3期：对抗路前期发育不好怎么办？
+              </span>
+            </li>
+            <li class="video-list">
+              <a class="list-link" href="#">
+                <div class="cover">
+                  <i class="icon-hov"></i>
+                </div>
+                <img src="./img/video_album06.jfif" alt="">
+                <span class="up">
+                  <i class="icon"></i>
+                  <span class="num">55.2w</span>
+                </span>
+              </a>
+              <span class="list-bottom">
+                【边路通天指南】第4期：对抗路的对线小细节
+              </span>
+            </li>
+            <li class="video-list">
+              <a class="list-link" href="#">
+                <div class="cover">
+                  <i class="icon-hov"></i>
+                </div>
+                <img src="./img/video_album07.jfif" alt="">
+                <span class="up">
+                  <i class="icon"></i>
+                  <span class="num">55.2w</span>
+                </span>
+              </a>
+              <span class="list-bottom">
+                【边路通天指南】第3期：对抗路对线劣势怎么办？
+              </span>
+            </li>
+            <li class="video-list">
+              <a class="list-link" href="#">
+                <div class="cover">
+                  <i class="icon-hov"></i>
+                </div>
+                <img src="./img/video_album08.jfif" alt="">
+                <span class="up">
+                  <i class="icon"></i>
+                  <span class="num">55.2w</span>
+                </span>
+              </a>
+              <span class="list-bottom">
+                【边路通天指南】第3期：打边路总是逆风？摸清4种突发情况让你对抗不再迷茫！
+              </span>
+            </li>
+          </ul>
+          <div class="item_common">
+            <h3 class="item-match item_header">赛事中心</h3>
+            <a href="#" class="more_header">更多</a>
+          </div>
+          <div class="item_column">
+            <a class="active" href="#">挑战者杯</a>
+            <span></span>
+            <a href="#">KPL</a>
+            <span></span>
+            <a href="#">K甲联赛</a>
+            <span></span>
+            <a href="#">全国大赛</a>
+            <span></span>
+            <a href="#">高校联赛</a>
+            <span></span>
+            <a href="#">TGA</a>
+            <span></span>
+            <a href="#">微信游戏申请赛</a>
+            <span></span>
+          </div>
+          <div class="item_scan">
+            <a class="scan-album" href="#">
+              <img src="./img/scan_album.jpg" alt="">
+            </a>
+            <div class="scan-content">
+              <a class="content-header" href="#">武汉eStarPro勇夺2022年王者荣耀挑战者杯</a>
+              <a class="content-subhead" href="#">10月6日，2022年王者荣耀挑战者杯总决赛顺利落幕，武汉eStarPro和北京WB历经7局鏖战，最终武汉eStarPro以4:3的比分击败对手成功卫冕挑战者杯</a>
+              <ul class="content-list">
+                <li class="list-item">
+                  <span>挑战者杯</span>
+                  <a href="#">三大赛道群雄并起，2022挑战者杯淘汰赛八进四成王败寇</a>
+                  <i>09-22</i>
+                </li>
+                <li class="list-item">
+                  <span>挑战者杯</span>
+                  <a href="#">厉兵秣马严阵以待，2022挑战者杯小组赛即将打响</a>
+                  <i>09-14</i>
+                </li>
+                <li class="list-item">
+                  <span>挑战者杯</span>
+                  <a href="#">王者荣耀挑战者杯2022赛事规则</a>
+                  <i>09-13</i>
+                </li>
+                <li class="list-item">
+                  <span>挑战者杯</span>
+                  <a href="#">王者荣耀赛事竞猜系统公告</a>
+                  <i>01-18</i>
+                </li>
+                <li class="list-item">
+                  <span>挑战者杯</span>
+                  <a href="#">挑战者杯总决赛王者时刻：武汉ES登顶夺冠</a>
+                  <i>01-17</i>
+                </li>
+                <li class="list-item">
+                  <span>挑战者杯</span>
+                  <a href="#">挑战者皆王者！2021挑战者杯于杭州圆满落幕 武汉ES夺冠</a>
+                  <i>01-16</i>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <ul class="item_video">
+            <li class="video-list">
+              <a class="list-link" href="#">
+                <div class="cover">
+                  <i class="icon-hov"></i>
+                </div>
+                <img src="./img/video_album01.png" alt="">
+                <span class="up">
+                  <i class="icon"></i>
+                  <span class="num">55.2w</span>
+                </span>
+              </a>
+              <span class="list-bottom">
+                【超神快讯1+1】第二季第九期 揭秘KPL陷入五的怪圈
+              </span>
+            </li>
+            <li class="video-list">
+              <a class="list-link" href="#">
+                <div class="cover">
+                  <i class="icon-hov"></i>
+                </div>
+                <img src="./img/video_album02.jfif" alt="">
+                <span class="up">
+                  <i class="icon"></i>
+                  <span class="num">55.2w</span>
+                </span>
+              </a>
+              <span class="list-bottom">
+                峡谷大气层|力的作用是相互的之拿捏对手反向大招 
+              </span>
+            </li>
+            <li class="video-list">
+              <a class="list-link" href="#">
+                <div class="cover">
+                  <i class="icon-hov"></i>
+                </div>
+                <img src="./img/video_album03.jfif" alt="">
+                <span class="up">
+                  <i class="icon"></i>
+                  <span class="num">55.2w</span>
+                </span>
+              </a>
+              <span class="list-bottom">
+                【边路通天指南】第5期：解决英雄克制的技巧
+              </span>
+            </li>
+            <li class="video-list">
+              <a class="list-link" href="#">
+                <div class="cover">
+                  <i class="icon-hov"></i>
+                </div>
+                <img src="./img/video_album04.jfif" alt="">
+                <span class="up">
+                  <i class="icon"></i>
+                  <span class="num">55.2w</span>
+                </span>
+              </a>
+              <span class="list-bottom">
+                【边路通天指南】第4期：如何前期在对抗路线上打出压制力？这些小细节一定得注意!
+              </span>
+            </li>
+            <li class="video-list">
+              <a class="list-link" href="#">
+                <div class="cover">
+                  <i class="icon-hov"></i>
+                </div>
+                <img src="./img/video_album05.jfif" alt="">
+                <span class="up">
+                  <i class="icon"></i>
+                  <span class="num">55.2w</span>
+                </span>
+              </a>
+              <span class="list-bottom">
+                【边路通天指南】第3期：对抗路前期发育不好怎么办？
+              </span>
+            </li>
+            <li class="video-list">
+              <a class="list-link" href="#">
+                <div class="cover">
+                  <i class="icon-hov"></i>
+                </div>
+                <img src="./img/video_album06.jfif" alt="">
+                <span class="up">
+                  <i class="icon"></i>
+                  <span class="num">55.2w</span>
+                </span>
+              </a>
+              <span class="list-bottom">
+                【边路通天指南】第4期：对抗路的对线小细节
+              </span>
+            </li>
+            <li class="video-list">
+              <a class="list-link" href="#">
+                <div class="cover">
+                  <i class="icon-hov"></i>
+                </div>
+                <img src="./img/video_album07.jfif" alt="">
+                <span class="up">
+                  <i class="icon"></i>
+                  <span class="num">55.2w</span>
+                </span>
+              </a>
+              <span class="list-bottom">
+                【边路通天指南】第3期：对抗路对线劣势怎么办？
+              </span>
+            </li>
+            <li class="video-list">
+              <a class="list-link" href="#">
+                <div class="cover">
+                  <i class="icon-hov"></i>
+                </div>
+                <img src="./img/video_album08.jfif" alt="">
+                <span class="up">
+                  <i class="icon"></i>
+                  <span class="num">55.2w</span>
+                </span>
+              </a>
+              <span class="list-bottom">
+                【边路通天指南】第3期：打边路总是逆风？摸清4种突发情况让你对抗不再迷茫！
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div class="content-right">
+          <div class="item_common">
+            <h3 class="item-role item_header">英雄/皮肤</h3>
+            <a href="#" class="more_header">更多</a>
+          </div>
+          <div class="item_column">
+            <a class="active" href="#">最新英雄</a>
+            <span></span>
+            <a href="#">最新皮肤</a>
+            <span></span>
+            <a href="#">周免英雄</a>
+          </div>
+          <div class="item_new-hero">
+            <a class="hero-album" href="#">
+              <img src="./img/new-hero.webp" alt="">
+            </a>
+            <div class="hero-info">
+              <p class="hero-name">新英雄：海月</p>
+              <p class="online-time">上线时间：2022.09.22</p>
+            </div>
+            <ul class="hero-list">
+              <li class="item-list">
+                <a class="list-link" href="#">
+                  <img src="./img/hero-list01.jpg" alt="">
+                  <div class="cover">
+                    <span>戈娅</span>
+                  </div>
+                </a>
+              </li>
+              <li class="item-list">
+                <a class="list-link" href="#">
+                  <img src="./img/hero-list02.webp" alt="">
+                  <div class="cover">
+                    <span>暃</span>
+                  </div>
+                </a>
+              </li>
+              <li class="item-list">
+                <a class="list-link" href="#">
+                  <img src="./img/hero-list03.webp" alt="">
+                  <div class="cover">
+                    <span>金蝉</span>
+                  </div>
+                </a>
+              </li>
+              <li class="item-list">
+                <a class="list-link" href="#">
+                  <img src="./img/hero-list04.webp" alt="">
+                  <div class="cover">
+                    <span>戈娅</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="item_common">
+            <h3 class="item-game item_header">赛程</h3>
+            <a href="#" class="buy">购票</a>
+            <a href="#" class="more_header">更多</a>
+          </div>
+          <div class="item_subnav">
+            <span class="nav-time">时间</span>
+            <span class="nav-name01">战队</span>
+            <span class="nav-space"></span>
+            <span class="nav-name02">战队</span>
+          </div>
+          <ul class="item_battle">
+            <li class="battle-list">
+              <span class="nav-time">9-24 19:00</span>
+              <span class="nav-name01">
+                <img src="./img/Battalion01.png" alt="">
+                <i>武汉eStarPro</i>
+              </span>
+              <span class="nav-space">VS</span>
+              <span class="nav-name02">
+                <img src="./img/Battalion02.png" alt="">
+                <i>TCG</i>
+              </span>
+            </li>
+            <li class="battle-list">
+              <span class="nav-time">9-25 19:00</span>
+              <span class="nav-name01">
+                <img src="./img/Battalion03.png" alt="">
+                <i>重庆狼队</i>
+              </span>
+              <span class="nav-space">VS</span>
+              <span class="nav-name02">
+                <img src="./img/Battalion04.png" alt="">
+                <i>北京WB</i>
+              </span>
+            </li>
+            <li class="battle-list">
+              <span class="nav-time">9-28 19:00</span>
+              <span class="nav-name01">
+                <img src="./img/Battalion05.png" alt="">
+                <i>佛山DRG.GK</i>
+              </span>
+              <span class="nav-space">VS</span>
+              <span class="nav-name02">
+                <img src="./img/Battalion06.png" alt="">
+                <i>武汉eStarPro</i>
+              </span>
+            </li>
+            <li class="battle-list">
+              <span class="nav-time">9-28 19:00</span>
+              <span class="nav-name01">
+                <img src="./img/Battalion07.png" alt="">
+                <i>MTG</i>
+              </span>
+              <span class="nav-space">VS</span>
+              <span class="nav-name02">
+                <img src="./img/Battalion08.png" alt="">
+                <i>北京WB</i>
+              </span>
+            </li>
+            <li class="battle-list">
+              <span class="nav-time">10-6 18:00</span>
+              <span class="nav-name01">
+                <img src="./img/Battalion09.png" alt="">
+                <i>武汉eStarPro</i>
+              </span>
+              <span class="nav-space">VS</span>
+              <span class="nav-name02">
+                <img src="./img/Battalion10.png" alt="">
+                <i>北京WB</i>
+              </span>
+            </li>
+          </ul>
+          <div class="item_album">
+            <a href="#" class="album-link">
+              <img src="./img/item_album.webp" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+</body>
+</html>

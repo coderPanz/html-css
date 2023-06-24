@@ -1,0 +1,494 @@
+/* main */
+ /* 左侧 */
+ .main .area-left {
+  width: 689px;
+  height: 1340px;
+  padding: 20px 20px 30px;
+}  
+
+/* 热门推荐 */
+/* header02 */
+.main .area-left .header_type_02 .right-area .more {
+  padding-right: 10px;
+}
+/* 歌单列表 */
+.main .area-left .list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.main .area-left .list .item {
+  width: 140px;
+  height: 204px;
+  padding-bottom: 30px;
+}
+.main .area-left .list .item .top {
+  position: relative;
+}
+.main .area-left .list .item .top-img {
+  display: block;
+  width: 140px;
+  height: 140px;
+  border-radius: 4px;
+  /* 解决图片下面多出来的一行像素 */
+  /* vertical-align: top; */ 
+}
+.main .area-left .list .item .top-cover {
+  display: inline-block;
+  position: absolute;
+  /* 不把宽高写死:这样设置,当图片大小改变时,背景图会自动填满 */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* width: 140px;
+  height: 140px; */
+  background: url(../images/网易云精灵图.png) 0 0 no-repeat;
+}
+.main .area-left .list .item .top-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-left: 10px;
+  height: 27px;
+  font-size: 12px;
+  color: #ccc;
+  line-height: 27px;
+  background-image: url(../images/网易云精灵图02.png);
+  background-position: 0 -537px;
+}
+.main .area-left .list .item .top-info-icon {
+  position: relative;
+  top: 1px;
+}
+.main .area-left .list .item .top-info-title {
+  margin-left: 4px;
+}
+.main .area-left .list .item .top-info-play {
+  position: absolute;
+  /* 让icon图标居中 */
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  right: 8px;
+}
+.main .area-left .list .item .top-info-play:hover {
+  background-position: 0 -60px;
+}
+.main .area-left .list .item .bottom {
+  display: block;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.main .area-left .list .item .bottom:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* 新碟上架 */
+.main .area-left .desc-section .content {
+  width: 687px;
+  height: 186px;
+  margin: 20px 0 37px;
+  border: 1px solid #d3d3d3;
+}
+.main .area-left .desc-section .content .inner {
+  position: relative;
+  height: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;  
+  border: 1px solid #fff;
+}
+.desc-section .content .inner .roll {
+  display: flex;
+  height: 100%;
+  /* background-color: #f00;  */
+  /* 超出的轮播图不显示 */ 
+  overflow: hidden;
+}
+/* 轮播图 */
+.desc-section .content .inner .roll .roll-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* 设置同行显示不压缩 */
+  flex-shrink: 0;
+  /* background-color: #0f0; */
+}
+.content .inner .roll .roll-list .item {
+  width: 118px;
+  height: 150px;
+  background: url(../img/main_index.png) -260px 100px no-repeat;
+}
+.content .inner .roll .roll-list .item .album {
+  position: relative;
+  margin-bottom: 5px;
+}
+.content .inner .roll .roll-list .item .album .cover{
+  position: absolute;
+  /* 设置后大小会撑满该块 */
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: url(../img/coverall.png) 0 -570px no-repeat;
+}
+.inner .roll .roll-list .item .album .icon-play {
+  display: none;/* 默认不显示 */
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  /* 使得背景图撑满对应的位置 */
+  left: 72px;
+  right: 10px;
+  bottom: 5px;
+  background: url(../img/icon_sprite.png) 0 -85px no-repeat;
+}
+.inner .roll .roll-list .item .album:hover .icon-play {
+ display: block;
+}
+.inner .roll .roll-list .item .album .icon-play:hover {
+  background-position: 0 -110px;
+}
+.inner .roll .roll-list .item .tit-thide {
+  /* 调整文本溢出时省略号的位置(在该文本的父元素上调节) */
+  width: 90%;
+
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.inner .roll .roll-list .item .tit-thide .tit{
+  color: #333;
+  font-size: 12px;
+}
+.inner .roll .roll-list .item .tit-thide .tit:hover {
+  border-bottom: 1px solid #333;
+}
+.inner .roll .roll-list .item .desc-thide .bol {
+  color: #666;
+  font-size: 12px;
+}
+.inner .roll .roll-list .item .desc-thide .bol:hover {
+  border-bottom: 1px solid #666;
+}
+.inner .roll .roll-list .item .desc-thide .info {
+  color: #666;
+  font-size: 12px;
+}
+.inner .roll .roll-list .item .desc-thide .info:hover {
+  border-bottom: 1px solid #666;
+}
+.inner .ctrl {
+  position: absolute;
+  top: 60px;
+  width: 17px;
+  height: 17px;
+}
+.inner .ctrl-left {
+  background: url(../img/main_index.png) -260px -75px no-repeat;
+  left: 0px;
+}
+.inner .ctrl-left:hover {
+  background-position: -280px -75px;
+}
+.inner .ctrl-right {
+  background: url(../img/main_index.png) -300px -75px no-repeat;
+  right: 4px;
+}
+.inner .ctrl-right:hover {
+  background-position: -320px -75px;
+}
+
+/* 榜单 */
+.area-left .rank-section .content {
+  display: flex;
+  height: 472px;
+  margin-top: 20px;
+  background: url(../img/index_bill.png) no-repeat;
+}
+.area-left .rank-section .content .rank {
+  width: 230px;
+  height: 472px;
+}
+.area-left .rank-section .content .rank .top {
+  display: flex;
+  /* position: relative; */
+  height: 120px;
+  box-sizing: border-box;
+  padding-top: 20px;
+  padding-left: 19px;
+}
+.rank-section .content .rank .top .album{
+  position: relative;
+}
+.rank-section .content .rank .top .album img {
+  /* 需要对具体的图片设置宽高才生效 */
+  width: 80px;
+  height: 80px;
+}
+.rank-section .content .rank .top .album .cover{
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  /* 利用定位使得蒙版撑满整个封面 */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url(../img/coverall.png) -145px -57px no-repeat;
+}
+.rank-section .content .rank .top .tit {
+  margin-top: 6px;
+  margin-left: 10px;
+}
+.rank-section .content .rank .top .tit h3 {
+  color: #333;
+  font-size: 14px;
+  /* 悬停时鼠标指针变为小手指的效果 */
+  cursor: pointer;
+}
+.rank-section .content .rank .top .tit h3:hover {
+  text-decoration: underline;
+}
+.rank-section .content .rank .top .tit .btn {
+  /* a元素需设置inline-block/block后才能设置宽高 */
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-top: 5px;
+}
+.rank-section .content .rank .top .tit .btn.icon-play {
+  margin-right: 6px;
+  background: url(../img/main_index.png) -267px -205px no-repeat;
+}
+.rank-section .content .rank .top .tit .btn.icon-play:hover {
+  background-position: -267px -235px;
+}
+
+.rank-section .content .rank .top .tit .btn.icon-love {
+  background: url(../img/main_index.png) -300px -205px no-repeat;
+}
+.rank-section .content .rank .top .tit .btn.icon-love:hover {
+  background-position: -300px -235px;
+}
+
+/* 歌曲列表排行 */
+.rank-section .content .rank .list {
+  width: 230px;
+  margin: 0;
+  padding: 0;
+}
+.rank-section .content .rank .list .reset {
+  width: 230px;
+}
+.rank-section .content .rank .list .item {
+  display: flex;
+  /* 这里如果不设置宽度的话会与继承上面同类名的宽度过来可能会出现问题 */
+  /* width:100%表示子元素的宽度和父元素的宽度相等，其中并不包括子元素内外边距以及边框的值，为子元素真正的宽度 */
+
+  /* width: 100%; */
+
+  /* width：auto表示子元素的 宽度+内边距+外边距+边框 才等于父元素的宽度*/
+  /*注意：上述父元素的宽度都是父元素真正的宽度，即父元素width属性值*/
+  width: auto;
+
+  height: 32px;
+  /* line-height 可以继承 */
+  line-height: 32px;
+  padding-left: 15px;
+  padding-bottom: 0px;
+}
+.rank-section .content .rank .list .item:hover .operation {
+  display: flex;
+}
+.rank-section .content .rank .list .item .no {
+  /* 父元素设置flex布局后高度默认拉伸撑满父元素高度,所以高度可以不用设置 */
+  /* 但宽度需要设置,这里我们需要让它于其他内容保持一定的距离 */
+  width: 35px;
+  text-align: center;
+  color: #666;
+}
+.rank-section .content .rank .list .item:nth-child(-n+3) .no {
+  color: #c10d0c;
+}
+.rank-section .content .rank .list .item .song {
+  /* 可以使得song的宽度在父元素内容动态变化显示歌曲信息当operation是否处于hover时 */
+  flex: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #000;
+  font-size: 12px;
+}    
+.rank-section .content .rank .list .item .song:hover {
+  text-decoration: underline;
+}
+.rank-section .content .rank .list .item .operation {
+  display: none;
+  align-items: center;
+  width: 82px;
+}
+.rank-section .content .rank .list .item .operation .btn {
+  width: 17px;
+  height: 17px;
+}
+.rank-section .content .rank .list .item .operation .play{
+  background: url(../img/main_index.png) no-repeat -267px -268px;
+}
+.rank-section .content .rank .list .item .operation .play:hover {
+  background-position: -267px -288px;
+}
+.rank-section .content .rank .list .item .operation .add{
+  margin-left: 6px;
+  background: url(../img/icon_sprite_all.png) no-repeat 2px -698px;
+}
+.rank-section .content .rank .list .item .operation .add:hover {
+  background-position: -20px -698px
+}
+.rank-section .content .rank .list .item .operation .favor {
+  margin-left: 6px;
+  background: url(../img/main_index.png) no-repeat -297px -268px;
+}
+.rank-section .content .rank .list .item .operation .favor:hover {
+  background-position: -297px -288px;
+}
+.rank-section .content .rank .list .more {
+  width: 228px;
+  height: 32px;
+  color: #000;
+  line-height: 32px;
+  text-align: right;
+  font-size: 12px;
+  padding-right: 30px;
+}
+.rank-section .content .rank .list .more:hover {
+  text-decoration: underline;
+}
+.rank-section .content .rank .list .more .all {
+  cursor: pointer;
+}
+
+
+/* 网易云底部 */
+.main .area-bottom {
+  width: 1024px;
+  height: 172px;
+  margin: 0 auto;
+  background-color: #f2f2f2;;
+}
+.main .area-bottom .bot-info {
+  display: flex;
+  width: 980px;
+  height: 115px;
+  margin: 0 22px;
+}
+.main .area-bottom .bot-info .left-info {
+  width: 552px;
+  height: 100px;
+  padding-top: 15px;
+}
+.main .area-bottom .bot-info .left-info .item .link{
+  font-size: 12px;
+  color: #666 ;
+}
+.main .area-bottom .bot-info .left-info .item .a-link {
+  color: #999;
+}
+.main .area-bottom .bot-info .left-info .item .a-link:hover {
+  text-decoration: underline;
+}
+.main .area-bottom .bot-info .left-info .item .line {
+  font-size: 12px;
+  color: #999;
+}
+.main .area-bottom .bot-info .left-info .item .b-link {
+  color: #666;
+}
+.main .area-bottom .bot-info .left-info .item .pany-link {
+  margin-right: 10px;
+}
+.main .area-bottom .bot-info .left-info .item .icon{
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 2px;
+  background: url(../img/icon-police.png) no-repeat -3px 1px;
+  cursor: pointer;
+}
+
+/* 底部右侧 */
+.main .area-bottom .bot-info .right-info {
+  display: flex;
+  width: 420px;
+  height: 70px;
+  margin-top: 33px;
+}
+.main .area-bottom .bot-info .right-info .list {
+  width: 60px;
+  height: 70px;
+  margin-left: 30px;
+}
+.main .area-bottom .bot-info .right-info .list .album {
+  display: inline-block;
+  width: 50px;
+  height: 45px;
+  margin: 0 5px;
+  /* 设置背景图尺寸大小:不能被继承 */
+  /* background-size: 110px 552px; */
+  background: url(../img/foot_enter_new.png) no-repeat;
+}
+.main .area-bottom .bot-info .right-info .list .o-album {
+  background-size: 110px 552px;
+  background-position: -63px -456.5px;
+}
+.main .area-bottom .bot-info .right-info .list .t-album {
+  background-size: 110px 552px;
+  background-position: -63px -101px;
+}
+.main .area-bottom .bot-info .right-info .list .s-album {
+  background-size: 110px 552px;
+  background-position: 0 0;
+}
+.main .area-bottom .bot-info .right-info .list .f-album {
+  background-size: 110px 552px;
+  background-position: -60px -50px;
+}
+.main .area-bottom .bot-info .right-info .list .fi-album {
+  background-size: 110px 552px;
+  background-position: 0 -101px;
+}
+.main .area-bottom .bot-info .right-info .list .desc {
+  display: inline-block;
+  width: 72px;
+  height: 14px;
+  margin: 5px 5px 0 5px;
+  background: url(../img/foot_enter_tt.png) no-repeat;
+}
+.main .area-bottom .bot-info .right-info .list .o-desc {
+  margin: 5px 5px 0 -6px;
+}
+.main .area-bottom .bot-info .right-info .list .o-desc {
+  background-size: 180px 139px;
+  background-position: 0 -108px;
+}
+.main .area-bottom .bot-info .right-info .list .t-desc {
+  background-size: 180px 139px;
+  background-position: -1px -91px;
+}
+.main .area-bottom .bot-info .right-info .list .s-desc {
+  background-size: 180px 139px;
+  background-position: 0 0;
+}
+.main .area-bottom .bot-info .right-info .list .f-desc {
+  background-size: 180px 139px;
+  background-position: 0 -54px;
+}
+.main .area-bottom .bot-info .right-info .list .fi-desc {
+  background-size: 180px 139px;
+  background-position: -1px -72px;
+}

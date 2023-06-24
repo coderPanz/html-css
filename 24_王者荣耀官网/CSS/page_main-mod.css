@@ -1,0 +1,19 @@
+.mod-list {
+  display: flex;
+  width: 1215px;
+  height: 134px;
+  margin: 28px auto 34px auto;
+}
+.mod-list .item {
+  width: 291px;
+  /* 使得hidde生效得前提是设置固定宽度,故width和overflow:hidden经常放一起 */
+  overflow: hidden;
+  margin-right: 12px;
+}
+.mod-list .item .mod-album {
+  display: block;
+  transition: transform .4s ease;
+}
+.mod-list .item .mod-album:hover {
+  transform: scale(1.1);
+}
